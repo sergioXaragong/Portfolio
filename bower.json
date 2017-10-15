@@ -1,0 +1,24 @@
+{
+  "name": "Portfolio",
+  "description": "Template de mi pagina web",
+  "main": "index.js",
+  "authors": [
+    "Sergio Alfonso"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Portfolio",
+    "Sokol",
+    "Sergio",
+    "Alfonso"
+  ],
+  "homepage": "https://github.com/sergioXaragong/Portfolio",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
