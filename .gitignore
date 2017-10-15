@@ -8,3 +8,14 @@
 
 node_modules/
 node_modules/**/*
+
+bower_components/
+bower_components/**/*
+
+assets/design
+assets/design/**/*
+
+dev/
+dev/**/*
+deploy/
+deploy/**/*

@@ -13,7 +13,7 @@ var deploy = false;
 
 /**** Dependencias ****/
 const gulp = require('gulp'),
-    jade = require('gulp-pug'),
+    pug = require('gulp-pug'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
@@ -32,7 +32,7 @@ var path = paths.dev;
 gulp.task('pug', function(){
     gulp.src([paths.source+'**/*.pug', '!'+paths.source+'**/_*.pug'])
         .pipe(pug({
-            pretty: true
+            pretty: !deploy
         }))
         .pipe(gulp.dest(path));
 });
@@ -40,8 +40,8 @@ gulp.task('less', function(){
     var $path = path+paths.css;
 
     gulp.src(paths.source+paths.css+'main.less')
-        .pipe(less({compress: built}))
-        .pipe(gulpif(built, minifyCss()))
+        .pipe(less({compress: deploy}))
+        .pipe(gulpif(deploy, minifyCss()))
         .pipe(autoprefixer('last 10 versions', 'ie 9'))
         .pipe(gulp.dest($path));
 });
@@ -86,12 +86,12 @@ gulp.task('fonts', function(){
 
 /**** Configuración Tareas de Development ****/
 gulp.task('watch', function(){
-    gulp.watch(paths.source+'**/*.jade', ['jade']);
+    gulp.watch(paths.source+'**/*.pug', ['pug']);
     gulp.watch(paths.source+paths.css+'**/*.less', ['less']);
     gulp.watch(paths.source+paths.js+'**/*.js', ['js']);
 });
 gulp.task('webserver', function () {
-    gulp.src('dev')
+    gulp.src('.')
         .pipe(webserver({
             livereload: true,
             open: true,
@@ -104,6 +104,8 @@ gulp.task('webserver', function () {
 gulp.task('compile', ['pug','less','js']);
 gulp.task('compileDeploy', function(){
     deploy = true;
+    path = paths.deploy;
+
     gulp.start('compile');
     gulp.start('images');
     gulp.start('vendor');
