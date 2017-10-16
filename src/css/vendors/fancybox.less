@@ -1,0 +1,77 @@
+@media all and (min-width: 800px) {
+  .fancybox-custom-layout {
+    border: @padding*2 solid fadeout(@color-black, 50%);
+  }
+
+  .fancybox-custom-layout .fancybox-thumbs {
+    background: @color-gray;
+  }
+
+  .fancybox-custom-layout .fancybox-bg {
+    background:@color-gray;
+    opacity: 1;
+  }
+
+  /* Move caption area to the right side */
+  .fancybox-custom-layout .fancybox-caption-wrap {
+    background: darken(@color-yellow, 10%);
+    bottom: 0;
+    left: auto;
+    padding: 0;
+    top: 0;
+    right: 44px;
+    width: 300px;
+    .fancybox-caption{
+      font-family: @font__title;
+      font-size: @font__size;
+      *{
+        line-height: 1.2em;
+      }
+      ul{
+        padding-left: @padding*2;
+      }
+    }
+  }
+
+  .fancybox-custom-layout .fancybox-stage,
+  .fancybox-custom-layout .fancybox-arrow--right {
+    right: 344px;
+  }
+
+  .fancybox-custom-layout .fancybox-caption {
+    padding: 30px 20px;
+    border: 0;
+  }
+
+  .fancybox-custom-layout .fancybox-toolbar {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 44px;
+    background: @color-black;
+  }
+
+  .fancybox-custom-layout .fancybox-button {
+    background: transparent;
+  }
+
+  .ad {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    color: @color-white;
+  }
+
+  .ad p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .ad p a {
+    color: @color-white;
+  }
+}

@@ -1,0 +1,39 @@
+.isotope{
+  .isotope-filter{
+    margin-bottom: @padding*3;
+    .filter{
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      font-family: @font__title;
+      font-size: .85em;
+      font-weight: 600;
+      outline: none;
+      padding: 0 @padding+5 0 @padding;
+      position: relative;
+      &:after{
+        content: '-';
+        color: @color-black;
+        font-weight: 700;
+        position: absolute;
+        right: 0;
+      }
+      &:hover, &.active{
+        color: @color-yellow;
+      }
+      &:last-child{
+        &:after{
+          content: '';
+        }
+      }
+    }
+  }
+  .isotope-grid{
+    display: flex;
+    width: 100%;
+    .grid-item{
+      padding: .5rem;
+      width: 25%;
+    }
+  }
+}

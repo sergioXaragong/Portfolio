@@ -1,6 +1,45 @@
 $.when($.ready).then(function() {
     init();
+
+
+    $('a.fancybox-custom').fancybox({
+        idleTime  : false,
+        baseClass : 'fancybox-custom-layout',
+        margin    : 0,
+        infobar   : false,
+        thumbs    : { hideOnClose : false },
+        touch : { vertical : 'auto' },
+        buttons : [
+            'close',
+            'thumbs',
+            'slideShow',
+            'fullScreen'
+        ],
+        animationEffect   : false,
+        closeClickOutside : false,
+
+        caption : function( instance ) {
+            //var advert = '<div class="ad"><p><a href="//fancyapps.com/fancybox/">fancyBox3</a> - touch enabled, responsive and fully customizable lightbox script</p></div>';
+            var advert = '';
+            return advert + ( $(this).data('caption') || '' );
+        }
+    });
 });
+
+var resizingElement = function(){
+    $('.js-resizing:not(.js-resizing-check)').each(function() {
+        var element = $(this);
+        $(window).resize(function() {
+            var width = element.outerWidth();
+            element.css({
+                "height": width * eval(element.attr('data-resizing'))
+            });
+            element.addClass('js-resizing-check');
+        }).resize();
+    });
+};
+
+/************************************************/
 
 var particles = function(){
     $('.particles_js').each(function(){
@@ -154,7 +193,6 @@ var singlePageNav = function(){
         offset: 120,
         threshold: 20
     });
-    console.log($('#principal-menu').outerHeight());
 };
 
 var scrollEvent= function(){
@@ -177,7 +215,35 @@ var skillsProgress = function(){
     });
 };
 
+var isotopeGrid = function(){
+    $('.isotope').each(function(){
+        var isotope = $(this);
+        var grid = isotope.find('.isotope-grid');
+        var isotopeGrid = grid.isotope({
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows'
+        });
+
+        isotope.find('.isotope-filter .filter').on('click', function(){
+            isotope.find('.isotope-filter .filter').removeClass('active');
+            var button = $(this);
+            var filter = button.attr('category');
+            isotopeGrid.isotope({filter: filter});
+            button.addClass('active');
+        });
+
+        $(window).on('resize', function(){
+            isotopeGrid.isotope('reloadItems');
+        }).resize();
+        setTimeout(function(){
+            isotopeGrid.isotope();
+        }, 500);
+    });
+};
+
 var init = function(){
+    resizingElement();
+
     particles();
     typed();
 
@@ -185,4 +251,6 @@ var init = function(){
     scrollEvent();
 
     skillsProgress();
+
+    isotopeGrid();
 };
