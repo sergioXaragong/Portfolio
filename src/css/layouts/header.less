@@ -1,0 +1,82 @@
+@keyframes scroll {
+  0%, 100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-@padding*.25);
+  }
+}
+
+#header__index{
+  background: url("@{path__images}/header.jpg") no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  .header__overlay{
+    color: @color-white;
+    font-family: @font__title;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    .limiter-content{
+      height: 100%;
+      position: relative;
+    }
+    .caption{
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      h1{
+        font-size: 5em;
+        margin: @padding 0;
+      }
+      .typed__layer{
+        *{
+          display: inline-block;
+          font-size: 3.5em;
+          line-height: 1em;
+        }
+        h2{
+          font-weight: 400;
+          margin: 0 0 0 20px;
+          padding-right: @padding;
+        }
+        span{
+          color: @color-yellow;
+          font-weight: 100;
+        }
+        .typed-cursor{
+          animation: flash 2s infinite;
+          position: relative;
+          bottom: 7px;
+        }
+      }
+    }
+    .button-scroll{
+      border: 2px solid @color-white;
+      border-radius: @padding;
+      bottom: @padding*2;
+      height: 50px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 26px;
+      &:after{
+        animation: scroll 1s infinite;
+        background-color: @color-white;
+        bottom: @padding*.75;
+        content: '';
+        height: 10px;
+        left: 50%;
+        margin-left: -1px;
+        position: absolute;
+        width: 2px;
+      }
+    }
+  }
+}
