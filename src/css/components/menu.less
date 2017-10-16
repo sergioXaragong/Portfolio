@@ -1,0 +1,36 @@
+#principal-menu{
+  font-family: @font__title;
+  left: 0;
+  padding: @padding*.75 0;
+  position: fixed;
+  top: 0;
+  transition: all .4s;
+  width: 100%;
+  z-index: 9999;
+  &.scroll{
+    background-color: fadeout(@color-black, 5%);
+  }
+  .title{
+    color: @color-yellow;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .menu{
+    font-size: 1.2em;
+    list-style: none;
+    a{
+      color: @color-white;
+      padding: 0 @padding;
+      text-decoration: none;
+      &:hover, &.active{
+        color: @color-yellow;
+      }
+    }
+    li{
+      &:last-child{
+        padding-right: 0;
+      }
+    }
+  }
+}

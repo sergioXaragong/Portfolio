@@ -147,7 +147,29 @@ var typed = function(){
     });
 };
 
+var singlePageNav = function(){
+    $('#principal-menu').singlePageNav({
+        //offset: $('.single-page-nav').outerHeight(),
+        filter: ':not(.external)',
+        currentClass: 'active',
+        updateHash: true
+    });
+};
+
+var scrollEvent= function(){
+    $(window).on('scroll', function(){
+        var scroll = $(window).scrollTop();
+        if(scroll > 250)
+            $('#principal-menu').addClass('scroll');
+        else
+            $('#principal-menu').removeClass('scroll');
+    }).scroll();
+};
+
 var init = function(){
     particles();
     typed();
+
+    singlePageNav();
+    scrollEvent();
 };
