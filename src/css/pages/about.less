@@ -1,0 +1,45 @@
+#about-me{
+  .article{
+    flex-wrap: nowrap;
+  }
+  .about__image{
+    max-width: 350px;
+    width: 100%;
+  }
+  .about__info{
+    max-width: 600px;
+    text-align: center;
+    width: 100%;
+    .info{
+      .text__bold{
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .socials{
+    margin-top: @padding*3;
+    text-align: center;
+  }
+
+  .section__areas{
+    margin-top: @padding*3;
+    .area__info{
+      .item{
+        margin: @padding*4 0;
+        &:first-child{
+          margin-top: 0;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+        p{
+          margin: @padding*.75 0;
+        }
+        strong{
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

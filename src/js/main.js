@@ -149,11 +149,12 @@ var typed = function(){
 
 var singlePageNav = function(){
     $('#principal-menu').singlePageNav({
-        //offset: $('.single-page-nav').outerHeight(),
-        filter: ':not(.external)',
-        currentClass: 'active',
-        updateHash: true
+        speed: 1e3,
+        currentClass: "active",
+        offset: 120,
+        threshold: 10
     });
+    console.log($('#principal-menu').outerHeight());
 };
 
 var scrollEvent= function(){
@@ -166,10 +167,22 @@ var scrollEvent= function(){
     }).scroll();
 };
 
+var skillsProgress = function(){
+    $('.skill_progress').each(function(){
+        var skill = $(this);
+        if(skill.is('[data-progress]')){
+            var progress = parseInt(skill.attr('data-progress'));
+            skill.append($('<span>').css('width', (progress+'%')));
+        }
+    });
+};
+
 var init = function(){
     particles();
     typed();
 
     singlePageNav();
     scrollEvent();
+
+    skillsProgress();
 };
