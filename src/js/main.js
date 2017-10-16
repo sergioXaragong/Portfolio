@@ -152,7 +152,7 @@ var singlePageNav = function(){
         speed: 1e3,
         currentClass: "active",
         offset: 120,
-        threshold: 10
+        threshold: 20
     });
     console.log($('#principal-menu').outerHeight());
 };

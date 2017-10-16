@@ -3,6 +3,8 @@ extends _base
 block content
     include _about
 
+    include _services
+
     each i in ['section1','section2','section3','section4','section5']
         div(id=i)
             h1 TEST #{i}
