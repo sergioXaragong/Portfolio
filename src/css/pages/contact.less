@@ -1,0 +1,47 @@
+#contact{
+  background: url("@{path__images}/contact.jpg") no-repeat center;
+  background-attachment: fixed;
+
+  .contact__info{
+    color: @color-white;
+    font-family: @font__title;
+    address{
+      font-style: normal;
+    }
+    .contact__block{
+      padding: @padding 0;
+      &:first-child{
+        padding-top: 0;
+        h3{
+          top: 0;
+        }
+      }
+      &:last-child{
+        border-bottom: 0;
+      }
+      p{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      strong{
+        color: @color-yellow;
+        font-weight: 300;
+      }
+      .title__block{
+        color: @color-yellow;
+        font-weight: 600;
+        margin-top: @padding;
+      }
+      .socials{
+        .icon{
+          background-color: @color-yellow;
+          border-color: @color-yellow;
+          i{
+            color: @color-white;
+          }
+        }
+      }
+    }
+  }
+}
