@@ -1,6 +1,9 @@
 .isotope{
   .isotope-filter{
     margin-bottom: @padding*3;
+    .responsive(@screen-xs, {
+      display: none;
+    });
     .filter{
       background-color: transparent;
       border: 0;
@@ -34,6 +37,15 @@
     .grid-item{
       padding: .5rem;
       width: 25%;
+      .responsive(@screen-md, {
+        width: 33.333%;
+      });
+      .responsive(@screen-sm, {
+        width: 50%;
+      });
+      .responsive(@screen-xs, {
+        width: 100%;
+      });
     }
   }
 }

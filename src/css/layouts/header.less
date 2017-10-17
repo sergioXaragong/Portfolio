@@ -28,32 +28,67 @@
     }
     .caption{
       left: 0;
+      padding: 0 @padding;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      .responsive(@screen-md, {
+        font-size: .75em;
+      });
+      .responsive(@screen-sm, {
+        font-size: .5em;
+      });
+      .responsive(@screen-xs, {
+        text-align: center;
+        width: 100%;
+      });
       h1{
         font-size: 4em;
         margin: @padding 0;
       }
       .typed__layer{
+        .responsive(@screen-xs, {
+          height: 40px;
+        });
         *{
           display: inline-block;
           font-size: 3em;
           line-height: 1em;
+          .responsive(@screen-md, {
+            font-size: 2.8em;
+          });
+          .responsive(@screen-sm, {
+            font-size: 2.5em;
+          });
+          .responsive(@screen-sm, {
+            font-size: 2.1em;
+          });
         }
         h2{
           font-weight: 400;
           margin: 0 0 0 20px;
           padding-right: @padding;
+          .responsive(@screen-xs, {
+            margin: 0 0 0 @padding*.75;
+          });
         }
         span{
           color: @color-yellow;
           font-weight: 100;
+          .responsive(@screen-sm, {
+            font-weight: 300;
+          });
         }
         .typed-cursor{
           animation: flash 2s infinite;
           position: relative;
           bottom: 7px;
+          .responsive(@screen-sm, {
+            bottom: 3px;
+          });
+          .responsive(@screen-sm, {
+            display: none;
+          });
         }
       }
     }

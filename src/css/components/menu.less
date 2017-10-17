@@ -19,6 +19,8 @@
   .menu{
     font-size: 1.1em;
     list-style: none;
+    transition: all .4s;
+    transform-origin: top;
     a{
       color: @color-white;
       padding: 0 @padding;
@@ -32,5 +34,44 @@
         padding-right: 0;
       }
     }
+    .responsive(@screen-sm, {
+      background-color: fadeout(@color-black, 10%);
+      display: block;
+      left: 0;
+      padding: @padding 0;
+      position: absolute;
+      top: 100%;
+      transform: scaleY(0);
+      width: 100%;
+      &.active{
+        transform: scaleY(1);
+      }
+      li{
+        display: block;
+        text-align: center;
+        a{
+          display: inline-block;
+          padding: @padding*.5 @padding;
+        }
+      }
+    });
+  }
+  #btn-menu{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: none;
+    outline: none;
+    width: @padding*4;
+    span{
+      background-color: @color-yellow;
+      display: block;
+      height: 3px;
+      margin: @padding*.5 0;
+      width: 100%;
+    }
+    .responsive(@screen-sm, {
+      display: block;
+    });
   }
 }

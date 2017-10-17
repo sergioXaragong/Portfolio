@@ -3,6 +3,7 @@ var paths = {
     dev: 'dev/',
     deploy: 'deploy/',
 
+    assets: 'assets/',
     js: 'js/',
     css: 'css/',
     images: 'images/',
@@ -59,7 +60,7 @@ gulp.task('js', function(){
 gulp.task('images', function(){
     var $path = path+paths.images;
 
-    gulp.src(paths.source+paths.images+'**/*')
+    gulp.src(paths.assets+paths.images+'**/*')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
@@ -71,10 +72,29 @@ gulp.task('images', function(){
 
 /**** Configuración Tareas de Deploy ****/
 gulp.task('vendor', function(){
-    gulp.src([
+    gulp.src(['./bower_components/normalize-css/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'normalize-css/'));
 
-    ])
-        .pipe(gulp.dest(path+paths.vendor));
+    gulp.src(['./bower_components/flexboxgrid/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'flexboxgrid/'));
+
+    gulp.src(['./bower_components/fancybox/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'fancybox/'));
+
+    gulp.src(['./bower_components/jquery/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'jquery/'));
+
+    gulp.src(['./bower_components/single-page-nav/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'single-page-nav/'));
+
+    gulp.src(['./bower_components/particles.js/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'particles.js/'));
+
+    gulp.src(['./bower_components/typed.js/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'typed.js/'));
+
+    gulp.src(['./bower_components/isotope/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'isotope/'));
 });
 gulp.task('fonts', function(){
     var $path = path+paths.css+'fonts/';

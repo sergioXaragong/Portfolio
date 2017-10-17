@@ -1,10 +1,19 @@
 #about-me{
   .article{
     flex-wrap: nowrap;
+    .responsive(@screen-sm, {
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    });
   }
   .about__image{
     max-width: 350px;
+    padding-right: @padding;
     width: 100%;
+    .responsive(@screen-sm, {
+      padding-right: 0;
+    });
   }
   .about__info{
     max-width: 600px;
@@ -23,7 +32,10 @@
   }
 
   .section__areas{
-    margin-top: @padding*5;
+    margin-top: @padding*2;
+    .section__area{
+      margin: @padding*3 0;
+    }
     .area__info{
       .item{
         margin: @padding*4 0;

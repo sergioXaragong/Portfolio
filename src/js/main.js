@@ -1,27 +1,11 @@
 $.when($.ready).then(function() {
     init();
 
-
-    $('a.fancybox-custom').fancybox({
-        idleTime  : false,
-        baseClass : 'fancybox-custom-layout',
-        margin    : 0,
-        infobar   : false,
-        thumbs    : { hideOnClose : false },
-        touch : { vertical : 'auto' },
-        buttons : [
-            'close',
-            'thumbs',
-            'slideShow',
-            'fullScreen'
-        ],
-        animationEffect   : false,
-        closeClickOutside : false,
-
-        caption : function( instance ) {
-            //var advert = '<div class="ad"><p><a href="//fancyapps.com/fancybox/">fancyBox3</a> - touch enabled, responsive and fully customizable lightbox script</p></div>';
-            var advert = '';
-            return advert + ( $(this).data('caption') || '' );
+    $('#btn-menu').on('click', function(){
+        var button = $(this);
+        if(button.is('[data-menu]')){
+            var menu = $(button.attr('data-menu'));
+            menu.toggleClass('active');
         }
     });
 });
@@ -190,7 +174,7 @@ var singlePageNav = function(){
     $('#principal-menu').singlePageNav({
         speed: 1e3,
         currentClass: "active",
-        offset: 120,
+        offset: 105,
         threshold: 20
     });
 };
@@ -241,6 +225,31 @@ var isotopeGrid = function(){
     });
 };
 
+var fancyboxCustom = function(){
+    $('a.fancybox-custom').fancybox({
+        idleTime  : false,
+        baseClass : 'fancybox-custom-layout',
+        margin    : 0,
+        infobar   : false,
+        thumbs    : { hideOnClose : false },
+        touch : { vertical : 'auto' },
+        buttons : [
+            'close',
+            'thumbs',
+            'slideShow',
+            'fullScreen'
+        ],
+        animationEffect   : false,
+        closeClickOutside : false,
+
+        caption : function( instance ) {
+            //var advert = '<div class="ad"><p><a href="//fancyapps.com/fancybox/">fancyBox3</a> - touch enabled, responsive and fully customizable lightbox script</p></div>';
+            var advert = '';
+            return advert + ( $(this).data('caption') || '' );
+        }
+    });
+};
+
 var init = function(){
     resizingElement();
 
@@ -253,4 +262,5 @@ var init = function(){
     skillsProgress();
 
     isotopeGrid();
+    fancyboxCustom();
 };
