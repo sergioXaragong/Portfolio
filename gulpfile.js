@@ -99,7 +99,7 @@ gulp.task('vendor', function(){
 gulp.task('fonts', function(){
     var $path = path+paths.css+'fonts/';
 
-    gulp.src(paths.source+paths.css+'fonts/**/*')
+    gulp.src(paths.assets+'fonts/**/*')
         .pipe(gulp.dest($path));
 });
 

@@ -19,3 +19,11 @@ dev/
 dev/**/*
 deploy/
 deploy/**/*
+
+### WORDPRESS ###
+production/*.*
+production/wp-admin/**/*
+production/wp-includes/**/*
+production/wp-content/languages/**/*
+production/wp-content/plugins/*.*
+production/wp-content/themes/*.*
