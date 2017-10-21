@@ -33,15 +33,15 @@ section#contact.section.section-padding.not-margin
                                 a.icon(href="#", target="_blank")
                                     i.fa.fa-github
                 .col-sm-6.col-xs-12
-                    form.form(action="#", method="POST")
+                    form#contact-form.form(action="test/contact.json", method="GET")
                         .row
                             .col-sm-6.col-xs-12
                                 .form__group
-                                    input.form__input(name="name", placeholder="Nombre")
+                                    input.form__input(name="name", placeholder="Nombre", required, autocomplete="off")
                             .col-sm-6.col-xs-12
                                 .form__group
-                                    input.form__input(name="email", type="emial", placeholder="Correo Electrónico")
+                                    input.form__input(name="email", type="email", placeholder="Correo Electrónico", required, autocomplete="off")
                         .form__group
-                            textarea.form__input(name="message", placeholder="Mensaje")
+                            textarea.form__input(name="message", placeholder="Mensaje", required)
                         .form__group.row.not-margin.end-sm.center-xs
                             button.btn(type="submit") ENVIAR MENSAJE

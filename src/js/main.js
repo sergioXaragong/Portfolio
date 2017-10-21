@@ -8,6 +8,35 @@ $.when($.ready).then(function() {
             menu.toggleClass('active');
         }
     });
+    $(document).on('click', '#principal-menu .menu.active a', function(){
+        console.log('TEST');
+        var menu = $('#principal-menu .menu');
+        menu.toggleClass('active');
+    });
+
+
+    $('#contact-form').on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+        preloadObject.show();
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            dataType: 'json',
+            data: form.serialize()
+        })
+            .done(function(data) {
+                alertMessage(data.message);
+                if(data.status)
+                    form.find('input, textarea').val('');
+            })
+            .fail(function() {
+                alertMessage('Error intentando conectar con el servidor. Intente mas tarde!!!');
+            })
+            .always(function() {
+                preloadObject.hide();
+            });
+    });
 });
 
 var resizingElement = function(){
@@ -249,6 +278,40 @@ var fancyboxCustom = function(){
         }
     });
 };
+
+
+var preloadObject = {
+    show: function(){
+        var preload = $('.preloader');
+        if(!preload.length){
+            preload = $('<div>', {class: 'preloader'})
+                .append($('<div>', {class: 'wrapper'})
+                    .append($('<div>', {class: 'indicator'})
+                        .append($('<span>'))
+                        .append($('<span>'))
+                        .append($('<span>'))
+                        .append($('<span>'))));
+            $('body').append(preload);
+        }
+    },
+    hide: function(){
+        var preload = $('.preloader');
+        preload.addClass('remove');
+        setTimeout(function(){
+            preload.remove();
+        }, 400);
+    }
+};
+
+var alertMessage = function(message){
+    var message = $('<div>', {class: 'alert-message'})
+            .append($('<p>', {text: message}));
+    $('body').append(message);
+    setTimeout(function(){
+        message.remove();
+    }, 5000);
+};
+
 
 var init = function(){
     resizingElement();

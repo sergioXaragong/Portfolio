@@ -29,6 +29,7 @@
     "flexboxgrid": "^6.3.2",
     "single-page-nav": "https://github.com/ChrisWojcik/single-page-nav.git",
     "isotope": "isotope-layout#^3.0.4",
-    "fancybox": "^3.1.25"
+    "fancybox": "^3.1.25",
+    "PACE": "https://github.com/HubSpot/pace.git#^1.0.2"
   }
 }

@@ -95,6 +95,9 @@ gulp.task('vendor', function(){
 
     gulp.src(['./bower_components/isotope/**/*'])
         .pipe(gulp.dest(path+paths.vendor+'isotope/'));
+
+    gulp.src(['./bower_components/PACE/**/*'])
+        .pipe(gulp.dest(path+paths.vendor+'PACE/'));
 });
 gulp.task('fonts', function(){
     var $path = path+paths.css+'fonts/';

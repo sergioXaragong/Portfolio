@@ -16,3 +16,14 @@ function portfolio_widgets_init(){
     }
 }
 add_action('widgets_init', 'portfolio_widgets_init');
+
+
+
+
+function testEmail(){
+    $to = "sergioa@dodmediagroup.co";
+    $subject = "Apple Computer";
+    $message = "Steve, I think this computer thing might really take off.";
+
+    wp_mail( $to, $subject, $message );
+}

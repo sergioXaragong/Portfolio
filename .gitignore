@@ -6,6 +6,9 @@
 .idea/
 .idea/**/*
 
+aws/
+aws/**/*
+
 node_modules/
 node_modules/**/*
 
@@ -25,5 +28,6 @@ production/*.*
 production/wp-admin/**/*
 production/wp-includes/**/*
 production/wp-content/languages/**/*
-production/wp-content/plugins/*.*
+production/wp-content/plugins/**/*
 production/wp-content/themes/*.*
+production/wp-content/uploads/**/*

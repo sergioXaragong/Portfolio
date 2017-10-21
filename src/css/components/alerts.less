@@ -1,0 +1,20 @@
+.alert-message{
+  background-color: @color-black;
+  border-left: @padding*.5 solid @color-yellow;
+  bottom: @padding;
+  color: @color-white;
+  font-family: @font__title;
+  font-size: 1.3em;
+  max-width: 450px;
+  padding: @padding*2;
+  position: fixed;
+  right: @padding;
+  width: 100%;
+  z-index: 9999;
+  .responsive(@screen-xs, {
+    right: 0;
+  });
+  p{
+    margin: 0;
+  }
+}
