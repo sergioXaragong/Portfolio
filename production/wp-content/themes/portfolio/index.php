@@ -10,6 +10,7 @@
     <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/normalize-css/normalize.css" rel="stylesheet"/>
     <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/flexboxgrid/dist/flexboxgrid.min.css" rel="stylesheet"/>
     <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet"/>
+    <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/PACE/themes/silver/pace-theme-minimal.css" rel="stylesheet"/>
     <link href="<?php bloginfo('stylesheet_directory') ?>/css/main.css" rel="stylesheet"/>
 
     <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory') ?>/images/favicon.ico" type="image/x-icon"/>
@@ -319,21 +320,22 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-12">
-                        <form class="form" action="#" method="POST">
+                        <form class="form" id="contact-form" action="<?php echo admin_url('admin-ajax.php'); ?>" method="POST">
+                            <input type="hidden" name="action" value="sendMessage">
                             <div class="row">
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="form__group">
-                                        <input class="form__input" name="name" placeholder="Nombre"/>
+                                        <input class="form__input" name="name" placeholder="Nombre" required="required" autocomplete="off"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="form__group">
-                                        <input class="form__input" name="email" type="emial" placeholder="Correo Electrónico"/>
+                                        <input class="form__input" name="email" type="email" placeholder="Correo Electrónico" required="required" autocomplete="off"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="form__group">
-                                <textarea class="form__input" name="message" placeholder="Mensaje"></textarea>
+                                <textarea class="form__input" name="message" placeholder="Mensaje" required="required"></textarea>
                             </div>
                             <div class="form__group row not-margin end-sm center-xs">
                                 <button class="btn" type="submit">ENVIAR MENSAJE</button>
@@ -347,7 +349,7 @@
 </section>
 <footer class="footer">
     <div class="limiter-content">
-        <p>© 2017 copyright<strong> Sergio</strong>. All Rights Reserved</p>
+        <p>© <?php echo current_time('Y'); ?> copyright<strong> Sergio</strong>. All Rights Reserved</p>
     </div>
 </footer>
 <script src="<?php bloginfo('stylesheet_directory') ?>/vendor/single-page-nav/jquery.singlePageNav.min.js"></script>
@@ -355,6 +357,7 @@
 <script src="<?php bloginfo('stylesheet_directory') ?>/vendor/typed.js/lib/typed.min.js"></script>
 <script src="<?php bloginfo('stylesheet_directory') ?>/vendor/isotope/dist/isotope.pkgd.min.js"></script>
 <script src="<?php bloginfo('stylesheet_directory') ?>/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="<?php bloginfo('stylesheet_directory') ?>/vendor/PACE/pace.min.js"></script>
 <script src="<?php bloginfo('stylesheet_directory') ?>/js/main.js"></script>
 </body>
 </html>
