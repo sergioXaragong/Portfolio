@@ -7,11 +7,22 @@
 
     <title><?php bloginfo('name') ?> <?php wp_title(); ?></title>
 
+    <meta name="application-name" content="<?php echo bloginfo('name'); ?>" />
+    <meta name="description" content="<?php echo bloginfo('description'); ?>" />
+    <meta name="keywords" content="Sergio Alfonso, Portafolio, Desarrollo Web, Software, Paginas Web, Apps Moviles, Ingeniero Software" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="author" content="Sergio Alfonso" />
+
+    <meta property="og:title" content="<?php echo bloginfo('name'); ?>">
+    <meta property="og:image" content="<?php bloginfo('stylesheet_directory') ?>/images/facebook-preview.jpg">
+    <meta property="og:description" content="<?php echo bloginfo('description'); ?>">
+
     <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/normalize-css/normalize.css" rel="stylesheet"/>
     <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/flexboxgrid/dist/flexboxgrid.min.css" rel="stylesheet"/>
     <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet"/>
     <link href="<?php bloginfo('stylesheet_directory') ?>/vendor/PACE/themes/silver/pace-theme-minimal.css" rel="stylesheet"/>
-    <link href="<?php bloginfo('stylesheet_directory') ?>/css/main.css" rel="stylesheet"/>
+    <link href="<?php bloginfo('stylesheet_directory') ?>/css/main.css?v=1.0.0" rel="stylesheet"/>
 
     <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory') ?>/images/favicon.ico" type="image/x-icon"/>
     <link rel="icon" href="<?php bloginfo('stylesheet_directory') ?>/images/favicon.ico" type="image/x-icon"/>
@@ -93,7 +104,7 @@
                                     </div>
                                     <div class="item">
                                         <p><strong>Platzi</strong></p>
-                                        <p>Curso Online Frontend</p>
+                                        <p>Curso Online Desarrollo Tecnologías Frontend</p>
                                     </div>
                                     <div class="item">
                                         <p><strong>Servicio Nacional de Aprendizaje SENA</strong></p>
@@ -170,7 +181,7 @@
                                 <h3 class="title">Web Design</h3>
                             </header>
                             <div class="area__info">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+                                <p>Su sitio web es la sucursal digital de su negocio, y por lo general, la primera impresión para un cliente o prospecto.</p>
                             </div>
                         </aside>
                     </div>
@@ -181,7 +192,7 @@
                                 <h3 class="title">Responsive Design</h3>
                             </header>
                             <div class="area__info">
-                                <p>Digital Team is free responsive Bootstrap v3.3.5 layout from Images are from Pixabay free photo website.</p>
+                                <p>Hoy, responsive design ya es un requisito indispensable. Mis diseños siempre son adaptables a todos los dispositivos actuales y futuros, siguiendo siempre las últimas tendencias.</p>
                             </div>
                         </aside>
                     </div>
@@ -192,7 +203,7 @@
                                 <h3 class="title">Ecommerce</h3>
                             </header>
                             <div class="area__info">
-                                <p>You can edit and use this template for your websites. Please tell your friends about Tooplate. Thank you for visiting our website.</p>
+                                <p>Promocione sus productos o servicios y reciba cotizaciones o solicitudes de pedido en línea.</p>
                             </div>
                         </aside>
                     </div>
@@ -203,7 +214,7 @@
                                 <h3 class="title">Mobile App</h3>
                             </header>
                             <div class="area__info">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+                                <p>Diseño aplicaciones móviles a medida estudiando las necesidades de cada cliente de forma personalizada.</p>
                             </div>
                         </aside>
                     </div>
@@ -214,7 +225,7 @@
                                 <h3 class="title">Software Development</h3>
                             </header>
                             <div class="area__info">
-                                <p>You can easily change icons by looking at. Excepteu sunt in culpa qui officia. Duis aute irure dolor in reprehenderit.</p>
+                                <p>¡El software que tú imagines! Desde el concepto y planteamiento pasando por el diseño y el desarrollo, hasta el lanzamiento del producto final.</p>
                             </div>
                         </aside>
                     </div>
@@ -225,7 +236,7 @@
                                 <h3 class="title">Unlimited Support</h3>
                             </header>
                             <div class="area__info">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+                                <p>Actualizo, mantengo, modifico o corrijo lo que necesites y gestiono totalmente tu sitio web para que tú sólo tengas que preocuparte por el crecimiento de tu negocio.</p>
                             </div>
                         </aside>
                     </div>
@@ -358,6 +369,6 @@
 <script src="<?php bloginfo('stylesheet_directory') ?>/vendor/isotope/dist/isotope.pkgd.min.js"></script>
 <script src="<?php bloginfo('stylesheet_directory') ?>/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
 <script src="<?php bloginfo('stylesheet_directory') ?>/vendor/PACE/pace.min.js"></script>
-<script src="<?php bloginfo('stylesheet_directory') ?>/js/main.js"></script>
+<script src="<?php bloginfo('stylesheet_directory') ?>/js/main.js?v=1.0.0"></script>
 </body>
 </html>
